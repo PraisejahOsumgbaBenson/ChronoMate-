@@ -123,7 +123,9 @@
             font-weight: 600;
             font-size: 16px;
         }
-
+        .time-actions{
+            cursor: pointer;
+        }
         .timezone-list {
             display: flex;
             flex-direction: column;
