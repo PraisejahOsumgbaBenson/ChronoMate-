@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoMate - Time Intelligence Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="logo">
+            <div class="logo-icon">CM</div>
+            <span>ChronoMate</span>
+        </div>
+        <div class="nav-spacer"></div>
+        <div class="time-display" id="currentTime">3:42 PM • Berlin</div>
+        <div class="profile">
+            JS
+            <div class="sync-status"></div>
+        </div>
+    </div>
+
+    <!-- Time Grid Panel -->
+    <div class="time-panel">
+        <div class="time-header">
+            <div class="time-title">Time Grid</div>
+            <div class="time-actions">+</div>
+        </div>
+        <div class="timezone-list" id="timezoneList">
+            <!-- Timezones will be added here by JavaScript -->
+        </div>
+        <div class="time-converter">
+            <div class="converter-title">Visual Time Converter</div>
+            <div class="converter-dial" id="timeDial">
+                <div class="dial-center"></div>
+                <div class="dial-hand" id="dialHand"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- AI Console -->
+        <div class="ai-console">
+            <input type="text" class="console-input" id="aiInput" placeholder="/schedule 9am Friday Lagos with Anita -email anita@email.com">
+            <div class="suggestions" id="suggestions">
+                <div class="suggestion-item">
+                    <span class="suggestion-prefix">/schedule</span>
+                    <span>[time] [person] [template]</span>
+                </div>
+                <div class="suggestion-item">
+                    <span class="suggestion-prefix">/convert</span>
+                    <span>[time] [timezone] to [timezone]</span>
+                </div>
+                <div class="suggestion-item">
+                    <span class="suggestion-prefix">/find</span>
+                    <span>time with [person]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Stack -->
+        <div class="card-stack" id="cardStack">
+            <div class="card" draggable="true">
+                <div class="card-header">
+                    <div class="card-title">Q3 Launch Review</div>
+                    <div class="card-tag">Project</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-time">
+                        <div class="time-icon"></div>
+                        <div>Friday, Sep 15 • 9:00 AM - 10:30 AM (Lagos)</div>
+                    </div>
+                    <div class="attendees">
+                        <div class="attendee">JS</div>
+                        <div class="attendee">AM</div>
+                        <div class="attendee">+2</div>
+                    </div>
+                    <div>Discuss final launch plan and assign responsibilities</div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-action">🗓️ Add to Calendar</div>
+                    <div class="card-action">✉️ Draft Email</div>
+                    <div class="card-action">🔄 Reschedule</div>
+                </div>
+            </div>
+            <div class="card" draggable="true">
+                <div class="card-header">
+                    <div class="card-title">Coffee Chat with Anita</div>
+                    <div class="card-tag">1:1</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-time">
+                        <div class="time-icon"></div>
+                        <div>Today • 4:00 PM - 4:30 PM (Berlin → 7:00 AM SF)</div>
+                    </div>
+                    <div class="attendees">
+                        <div class="attendee">JS</div>
+                        <div class="attendee">AM</div>
+                    </div>
+                    <div>Follow up on API integration discussion</div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-action">🗓️ Add to Calendar</div>
+                    <div class="card-action">✉️ Draft Email</div>
+                    <div class="card-action">🔄 Reschedule</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <div class="panel-section">
+            <div class="panel-title">⏳ Last Interaction</div>
+            <div class="context-item">
+                <div class="context-header">
+                    <div class="context-name">Anita Müller</div>
+                    <div class="context-time">June 4 • 3:00 PM</div>
+                </div>
+                <div class="context-text">Discussed API delays in authentication flow. Need to revisit after Q2 launch.</div>
+            </div>
+        </div>
+        <div class="panel-section">
+            <div class="panel-title">💡 Suggestions</div>
+            <div class="context-text" style="margin-bottom: 12px;">Anita usually prefers Tuesdays for meetings.</div>
+            <div>
+                <div class="suggestion-chip">Attach Q2 Report.pptx</div>
+                <div class="suggestion-chip">Use "Product Sync" template</div>
+                <div class="suggestion-chip">Include Dev Team</div>
+            </div>
+        </div>
+        <div class="panel-section">
+            <div class="panel-title">📅 Upcoming</div>
+            <div class="context-item">
+                <div class="context-header">
+                    <div class="context-name">Team Standup</div>
+                    <div class="context-time">Tomorrow • 10:00 AM</div>
+                </div>
+                <div class="context-text">Daily sync with product team</div>
+            </div>
+            <div class="context-item">
+                <div class="context-header">
+                    <div class="context-name">Client Demo</div>
+                    <div class="context-time">Fri, Sep 22 • 2:00 PM</div>
+                </div>
+                <div class="context-text">Show new dashboard features to Acme Corp</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
